@@ -1,0 +1,63 @@
+{
+  "parameters": [
+    {
+      "dimension": "Financial Performance",
+      "sub_parameter": "Credit Risk",
+      "kpi": "PAR > 30 Days",
+      "unit_or_type": "",
+      "scoring_guidance": "",
+      "weight_pct": 25
+    },
+    {
+      "dimension": "Refinancing & Liquidity",
+      "sub_parameter": "Reputation",
+      "kpi": "Reputation metric",
+      "unit_or_type": "",
+      "scoring_guidance": "",
+      "weight_pct": 15
+    },
+    {
+      "dimension": "Governance & Management",
+      "sub_parameter": "Board Effectiveness",
+      "kpi": "Board metrics",
+      "unit_or_type": "",
+      "scoring_guidance": "",
+      "weight_pct": 15
+    },
+    {
+      "dimension": "Client Outreach & Social Impact",
+      "sub_parameter": "Population Segment Served",
+      "kpi": "Coverage",
+      "unit_or_type": "",
+      "scoring_guidance": "",
+      "weight_pct": 20
+    }
+  ],
+  "grading_bands": [
+    {
+      "grade": "A+",
+      "min": 85,
+      "max": 100
+    },
+    {
+      "grade": "A",
+      "min": 75,
+      "max": 84
+    },
+    {
+      "grade": "B",
+      "min": 65,
+      "max": 74
+    },
+    {
+      "grade": "C",
+      "min": 50,
+      "max": 64
+    },
+    {
+      "grade": "D",
+      "min": 0,
+      "max": 49
+    }
+  ]
+}
