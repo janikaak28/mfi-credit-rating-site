@@ -1,1 +1,46 @@
-<!doctype html><html><head><meta charset="utf-8"><title>MFI Credit Rating Calculator</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; line-height: 1.5; } .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 16px; } .btn { display: inline-block; padding: 10px 16px; border-radius: 10px; border: 1px solid #ccc; text-decoration: none; } table { border-collapse: collapse; width: 100%; } th, td { border: 1px solid #eee; padding: 8px; text-align: left; } th { background: #fafafa; } .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; } .badge { background: #f2f2f2; padding: 4px 8px; border-radius: 999px; font-size: 12px; }</style></head><body><h1>MFI Credit Rating Calculator</h1><p>This site reproduces your Excel model: parameters, weighting, scoring, and grading.</p><div class="card"><h3>Dimensions & Total Weights</h3><div class="grid">{% for d, w in dims.items() %}<div class="card"><div><strong>{{ d }}</strong></div><div class="badge">Total Weight: {{ '%.2f'|format(w) }}%</div></div>{% endfor %}</div></div><div class="card"><h3>Grading Bands</h3><table><tr><th>Grade</th><th>Score Range</th></tr>{% for b in bands %}<tr><td>{{ b.grade }}</td><td>{{ b.min }} – {{ b.max }}</td></tr>{% endfor %}</table></div><a class="btn" href="/form">Start Rating →</a></body></html>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MFI Credit Rating Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; line-height: 1.5; }
+      .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+      .btn { display: inline-block; padding: 10px 16px; border-radius: 10px; border: 1px solid #ccc; text-decoration: none; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { border: 1px solid #eee; padding: 8px; text-align: left; }
+      th { background: #fafafa; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+      .badge { background: #f2f2f2; padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>MFI Credit Rating Calculator</h1>
+    <p>This site reproduces your Excel model: parameters, weighting, scoring, and grading.</p>
+
+    <div class="card">
+      <h3>Dimensions & Total Weights</h3>
+      <div class="grid">
+        {% for d, w in dims.items() %}
+          <div class="card">
+            <div><strong>{{ d }}</strong></div>
+            <div class="badge">Total Weight: {{ '%.2f'|format(w) }}%</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Grading Bands</h3>
+      <table>
+        <tr><th>Grade</th><th>Score Range</th></tr>
+        {% for b in bands %}
+          <tr><td>{{ b.grade }}</td><td>{{ b.min }} – {{ b.max }}</td></tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <a class="btn" href="/form">Start Rating →</a>
+  </body>
+</html>
